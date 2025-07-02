@@ -1,5 +1,140 @@
 # demo
 
+package com.movieticket.movie.mappers;
+
+import com.movieticket.movie.models.*;
+import org.springframework.stereotype.Service;
+import java.time.LocalDateTime;
+
+@Service
+public class BookingMapper {
+
+    public Booking toBooking(
+            String bookingId,
+            LocalDateTime bookingDate,
+            PaymentMethod paymentMethod,
+            PaymentStatus paymentStatus,
+            User user,
+            Showtime showtime,
+            SeatAvailability seatAvailability
+    ) {
+        return Booking.builder()
+                .bookingId(bookingId)
+                .bookingDate(bookingDate)
+                .paymentMethod(paymentMethod)
+                .paymentStatus(paymentStatus)
+                .user(user)
+                .seatAvailability(seatAvailability)
+                .showtime(showtime)
+                .build();
+    }
+}
+package com.movieticket.movie.mappers;
+
+
+import com.movieticket.movie.models.Genre;
+import com.movieticket.movie.models.Movie;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MovieMapper {
+
+    public Movie toMovie(String movieId, String title, Genre genre, String duration,String rating,String poster){
+        return  Movie.builder()
+                .movieId(movieId)
+                .title(title)
+                .genre(genre)
+                .duration(duration)
+                .rating(rating)
+                .poster(poster)
+                .build();
+    }
+}
+package com.movieticket.movie.mappers;
+
+import com.movieticket.movie.models.Seat;
+import com.movieticket.movie.models.SeatAvailability;
+import com.movieticket.movie.models.Theater;
+import org.springframework.stereotype.Service;
+
+@Service
+public class SeatMapper {
+
+    public Seat toSeat(String seatId, String seatRow, String seatNumber, String seatType, String seatSection, Theater theater){
+        return Seat.builder()
+                .seatId(seatId)
+                .seatRow(seatRow)
+                .seatNumber(seatNumber)
+                .seatType(seatType)
+                .seatSection(seatSection)
+                .theater(theater)
+                //.availabilities(availabilities)
+                .build();
+    }
+
+
+}
+package com.movieticket.movie.mappers;
+
+import com.movieticket.movie.models.Movie;
+import com.movieticket.movie.models.Showtime;
+import com.movieticket.movie.models.Theater;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+
+
+@Service
+public class ShowtimeMapper {
+
+public Showtime toShowtime(String showtimeId, Movie movie, Theater theater, LocalDateTime startTime,LocalDateTime endTime){
+    return Showtime.builder()
+            .showtimeId(showtimeId)
+            .movie(movie)
+            .theater(theater)
+            .startTime(startTime)
+            .endTime(endTime)
+            .build();
+}
+}package com.movieticket.movie.mappers;
+
+import com.movieticket.movie.models.Theater;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class TheaterMapper {
+
+public Theater toTheater(String theaterId, String name, String location){
+    return Theater.builder()
+            .theaterId(theaterId)
+            .name(name)
+            .location(location)
+            .build();
+}
+}package com.movieticket.movie.mappers;
+
+import com.movieticket.movie.models.User;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class UserMapper {
+
+    public User toUser(String userId, String username, String password, String email){
+        return User.builder()
+                .userId(userId)
+                .username(username)
+                .password(password)
+                .email(email)
+                .build();
+    }
+
+
+}
+
 package com.movieticket.movie.services.user_service;
 
 
