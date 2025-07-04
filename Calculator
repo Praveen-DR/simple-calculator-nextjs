@@ -1,5 +1,64 @@
 /* Base styles */
 
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 260px;
+}
+
+.display {
+  width: 100%;
+  height: 40px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: right;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.button {
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ddd;
+}
+
+.button.operator {
+  background-color: #d1e7dd;
+}
+
+.button.equal {
+  background-color: #a5d8ff;
+  grid-column: span 2;
+}
+
+
 <div class="calculator">
   <input type="text" class="display" id="display" disabled />
   <div class="buttons">
