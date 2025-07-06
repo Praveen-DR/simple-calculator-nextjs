@@ -2039,7 +2039,7 @@ public class Movie {
     @Id
     private String movieId;
 
-    @Column(nullable = false)
+    
     private String title;
 
     @Enumerated(EnumType.STRING)
