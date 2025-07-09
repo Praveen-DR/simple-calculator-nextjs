@@ -26,28 +26,7 @@ public class ShowtimeServiceImpl implements ShowtimeService{
     private final ShowtimeMapper showtimeMapper;
     private final UUIDUtil uuidUtil;
 
-    public ShowtimeServiceImpl(ShowtimeRepository showtimeRepository, ShowtimeMapper showtimeMapper,UUIDUtil uuidUtil){
-        this.showtimeRepository = showtimeRepository;
-        this.showtimeMapper =  showtimeMapper;
-        this.uuidUtil = uuidUtil;
-    }
-
-    @Override
-    public String createShowtime(String showtimeId, Movie movieId, Theater theaterId, LocalDateTime startTime, LocalDateTime endTime) {
-        Showtime showtime = showtimeMapper.toShowtime(uuidUtil.generateUuid(), movieId,theaterId,startTime,endTime);
-        showtimeRepository.save(showtime);
-        return "Showtime created";
-    }
-
-    @Override
-    public List<Showtime> getAllShowtimes() {
-        return List.of();
-    }
-
-    @Override
-    public Showtime getShowtimeId(String showtimeId) {
-        return null;
-    }
+  
 }
 
 
