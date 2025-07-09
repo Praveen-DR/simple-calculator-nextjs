@@ -49,11 +49,7 @@ public class Theater {
     @Id
     private String theaterId;
 
-    private String name;
-    private String location;
-
-    @OneToMany(mappedBy = "theater", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<Seat> seats;
+    
 }
 
 package com.movieticket.movie.models;
