@@ -83,17 +83,7 @@ public class Movie {
     private String movieId;
 
     
-    private String title;
-
-    @Enumerated(EnumType.STRING)
-    private Genre genre;
-
-    private String duration;
-    private String rating;
-    private String poster;
-
-    @OneToMany(mappedBy = "movie", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<Showtime> showtimes;
+   
 }
 
 package com.movieticket.movie.models;
@@ -137,23 +127,7 @@ public class Booking {
     private String bookingId;
     private LocalDateTime bookingDate;
 
-    @Enumerated(EnumType.STRING)
-    private PaymentMethod paymentMethod;
-
-    @Enumerated(EnumType.STRING)
-    private PaymentStatus paymentStatus;
-
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "seat_availability_id")
-    private SeatAvailability seatAvailability;
-
-    @ManyToOne
-    @JoinColumn(name = "showtimeId")
-    private Showtime showtime;
+   
 
 
 }
