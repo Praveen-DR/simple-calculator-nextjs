@@ -26,8 +26,8 @@ export default function Calculator() {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-slate-800 p-6 rounded-lg shadow-md w-80">
+    <div className="flex items-center justify-center min-h-screen bg-slate-800">
+      <div className="bg-slate-700 p-6 rounded-lg shadow-md w-80 border-2">
         <h1 className="text-2xl font-bold text-center mb-4 text-yellow-400">Calculator</h1>
         <input
           className="w-full p-2 mb-4 text-right border rounded bg-amber-50"
