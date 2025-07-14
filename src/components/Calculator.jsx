@@ -27,10 +27,10 @@ export default function Calculator() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-md w-80">
-        <h1 className="text-2xl font-bold text-center mb-4">Calculator</h1>
+      <div className="bg-slate-800 p-6 rounded-lg shadow-md w-80">
+        <h1 className="text-2xl font-bold text-center mb-4 text-yellow-400">Calculator</h1>
         <input
-          className="w-full p-2 mb-4 text-right border rounded"
+          className="w-full p-2 mb-4 text-right border rounded bg-amber-50"
           type="text"
           value={input}
           readOnly
@@ -40,7 +40,7 @@ export default function Calculator() {
             <button
               key={btn}
               onClick={() => handleClick(btn)}
-              className="bg-blue-500 text-white p-4 rounded hover:bg-blue-600 transition"
+              className="bg-yellow-500 text-white p-4 rounded hover:bg-red-600 transition"
             >
               {btn}
             </button>
