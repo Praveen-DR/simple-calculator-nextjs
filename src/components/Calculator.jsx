@@ -35,6 +35,7 @@ export default function Calculator() {
           value={input}
           readOnly
         />
+        
         <div className="grid grid-cols-4 gap-2">
           {buttons.map((btn) => (
             <button
